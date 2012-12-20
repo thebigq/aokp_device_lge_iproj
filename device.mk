@@ -47,10 +47,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/lge/iproj/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf
 
-# Bluetooth
-PRODUCT_COPY_FILES += \
-	device/lge/iproj/prebuilt/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
-
 # WiFi
 PRODUCT_COPY_FILES += \
 	device/lge/iproj/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf 
@@ -58,6 +54,10 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_PRODUCT),aokp_iproj) # XXX
 
 $(call inherit-product-if-exists, vendor/lge/iproj/iproj-vendor.mk)
+
+# Bluetooth
+PRODUCT_COPY_FILES += \
+	device/lge/iproj/prebuilt/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
 
 PRODUCT_COPY_FILES += \
 	device/lge/iproj/prebuilt/root/init.iproj.rc:root/init.iproj.rc \
